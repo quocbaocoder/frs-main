@@ -97,7 +97,7 @@ if (isset($_POST["addFaculty"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="resources/images/logo/attnlg.png" rel="icon">
-    <title>Dashboard</title>
+    <title>Điều khiển</title>
     <link rel="stylesheet" href="resources/assets/css/admin_styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
 </head>
@@ -110,13 +110,13 @@ if (isset($_POST["addFaculty"])) {
             <div id="overlay"></div>
             <div class="overview">
                 <div class="title">
-                    <h2 class="section--title">Overview</h2>
+                    <h2 class="section--title">Chung</h2>
                     <select name="date" id="date" class="dropdown">
-                        <option value="today">Today</option>
-                        <option value="lastweek">Last Week</option>
-                        <option value="lastmonth">Last Month</option>
-                        <option value="lastyear">Last Year</option>
-                        <option value="alltime">All Time</option>
+                        <option value="today">Hôm nay</option>
+                        <option value="lastweek">Tuần trước</option>
+                        <option value="lastmonth">Tháng trước</option>
+                        <option value="lastyear">Năm ngoái</option>
+                        <option value="alltime">Toàn bộ</option>
                     </select>
                 </div>
                 <div class="cards">
@@ -124,8 +124,8 @@ if (isset($_POST["addFaculty"])) {
 
                         <div class="card--data">
                             <div class="card--content">
-                                <button class="add"><i class="ri-add-line"></i>Add Course</button>
-                                <h1><?php total_rows('tblcourse') ?> Courses</h1>
+                                <button class="add"><i class="ri-add-line"></i>Thêm khoá</button>
+                                <h1><?php total_rows('tblcourse') ?> Khoá học</h1>
                             </div>
                             <i class="ri-user-2-line card--icon--lg"></i>
                         </div>
@@ -135,8 +135,8 @@ if (isset($_POST["addFaculty"])) {
 
                         <div class="card--data">
                             <div class="card--content">
-                                <button class="add"><i class="ri-add-line"></i>Add Units</button>
-                                <h1><?php total_rows('tblunit') ?> Units</h1>
+                                <button class="add"><i class="ri-add-line"></i>Thêm bài học</button>
+                                <h1><?php total_rows('tblunit') ?> Bài học</h1>
                             </div>
                             <i class="ri-file-text-line card--icon--lg"></i>
                         </div>
@@ -147,8 +147,8 @@ if (isset($_POST["addFaculty"])) {
 
                         <div class="card--data">
                             <div class="card--content">
-                                <button class="add"><i class="ri-add-line"></i>Add Faculty</button>
-                                <h1><?php total_rows("tblfaculty") ?> faculties </h1>
+                                <button class="add"><i class="ri-add-line"></i>Thêm khoa</button>
+                                <h1><?php total_rows("tblfaculty") ?> khoa </h1>
                             </div>
                             <i class="ri-user-line card--icon--lg"></i>
                         </div>
@@ -160,19 +160,19 @@ if (isset($_POST["addFaculty"])) {
             <?php showMessage() ?>
             <div class="table-container">
                 <div class="title">
-                    <h2 class="section--title">Course</h2>
+                    <h2 class="section--title">Khoá học</h2>
                 </div>
                 </a>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Faculty</th>
-                                <th>Total Units</th>
-                                <th>Total Students</th>
-                                <th>Date Created</th>
-                                <th>Action</th>
+                                <th>Tên</th>
+                                <th>Khoa</th>
+                                <th>Tổng bài học</th>
+                                <th>Tổng số học sinh</th>
+                                <th>Ngày tạo</th>
+                                <th>Thực hiện</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -216,19 +216,19 @@ if (isset($_POST["addFaculty"])) {
             </div>
             <div class="table-container">
                 <div class="title">
-                    <h2 class="section--title">Unit</h2>
+                    <h2 class="section--title">Bài học</h2>
                 </div>
                 </a>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Unit Code</th>
-                                <th>Name</th>
-                                <th>Course</th>
-                                <th>Total Student</th>
-                                <th>Date Created</th>
-                                <th>Action</th>
+                                <th>Mã bài học</th>
+                                <th>Tên</th>
+                                <th>Khoá học</th>
+                                <th>Tổng số học sinh</th>
+                                <th>Ngày tạo</th>
+                                <th>Thực hiện</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -267,19 +267,19 @@ if (isset($_POST["addFaculty"])) {
             </div>
             <div class="table-container">
                 <div class="title">
-                    <h2 class="section--title">Faculty</h2>
+                    <h2 class="section--title">Khoa</h2>
                 </div>
                 </a>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Code</th>
-                                <th>Name</th>
-                                <th>Total Courses</th>
-                                <th>Total Students</th>
-                                <th>Total Lectures</th>
-                                <th>Date Created</th>
+                                <th>Mã</th>
+                                <th>Tên</th>
+                                <th>Tổng khoá học</th>
+                                <th>Tổng số học sinh</th>
+                                <th>Tổng số bài giảng</th>
+                                <th>Ngày tạo</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -312,7 +312,7 @@ if (isset($_POST["addFaculty"])) {
                                     echo "</tr>";
                                 }
                             } else {
-                                echo "<tr><td colspan='6'>No records found</td></tr>";
+                                echo "<tr><td colspan='6'>Không tìm thấy dữ liệu</td></tr>";
                             }
 
                             ?>
@@ -328,19 +328,19 @@ if (isset($_POST["addFaculty"])) {
             <form method="POST" action="" name="addCourse" enctype="multipart/form-data">
                 <div style="display:flex; justify-content:space-around;">
                     <div class="form-title">
-                        <p>Add Course</p>
+                        <p>Thêm khoá học</p>
                     </div>
                     <div>
                         <span class="close">&times;</span>
                     </div>
                 </div>
 
-                <input type="text" name="courseName" placeholder="Course Name" required>
-                <input type="text" name="courseCode" placeholder="Course Code" required>
+                <input type="text" name="courseName" placeholder="Tên Khoá Học" required>
+                <input type="text" name="courseCode" placeholder="Mã Khoá Học" required>
 
 
                 <select required name="faculty">
-                    <option value="" selected>Select Faculty</option>
+                    <option value="" selected>Chọn Khoa</option>
                     <?php
                     $facultyNames = getFacultyNames();
                     foreach ($facultyNames as $faculty) {
@@ -349,7 +349,7 @@ if (isset($_POST["addFaculty"])) {
                     ?>
                 </select>
 
-                <input type="submit" class="submit" value="Save Course" name="addCourse">
+                <input type="submit" class="submit" value="Lưu khoá học" name="addCourse">
             </form>
         </div>
 
@@ -357,18 +357,18 @@ if (isset($_POST["addFaculty"])) {
             <form method="POST" action="" name="addUnit" enctype="multipart/form-data">
                 <div style="display:flex; justify-content:space-around;">
                     <div class="form-title">
-                        <p>Add Unit</p>
+                        <p>Thêm bài học</p>
                     </div>
                     <div>
                         <span class="close">&times;</span>
                     </div>
                 </div>
 
-                <input type="text" name="unitName" placeholder="Unit Name" required>
-                <input type="text" name="unitCode" placeholder="Unit Code" required>
+                <input type="text" name="unitName" placeholder="Tên Bài" required>
+                <input type="text" name="unitCode" placeholder="Mã Bài" required>
 
                 <select required name="lecture">
-                    <option value="" selected>Assign Lecture</option>
+                    <option value="" selected>Giao bài</option>
                     <?php
                     $lectureNames = getLectureNames();
                     foreach ($lectureNames as $lecture) {
@@ -377,7 +377,7 @@ if (isset($_POST["addFaculty"])) {
                     ?>
                 </select>
                 <select required name="course">
-                    <option value="" selected>Select Course</option>
+                    <option value="" selected>Chọn khoá</option>
                     <?php
                     $courseNames = getCourseNames();
                     foreach ($courseNames as $course) {
@@ -386,7 +386,7 @@ if (isset($_POST["addFaculty"])) {
                     ?>
                 </select>
 
-                <input type="submit" class="submit" value="Save Unit" name="addUnit">
+                <input type="submit" class="submit" value="Lưu Bài" name="addUnit">
             </form>
         </div>
 
@@ -394,15 +394,15 @@ if (isset($_POST["addFaculty"])) {
             <form method="POST" action="" name="addFaculty" enctype="multipart/form-data">
                 <div style="display:flex; justify-content:space-around;">
                     <div class="form-title">
-                        <p>Add Faculty</p>
+                        <p>Thêm khoa</p>
                     </div>
                     <div>
                         <span class="close">&times;</span>
                     </div>
                 </div>
-                <input type="text" name="facultyName" placeholder="Faculty Name" required>
-                <input type="text" name="facultyCode" placeholder="Faculty Code" required>
-                <input type="submit" class="submit" value="Save Faculty" name="addFaculty">
+                <input type="text" name="facultyName" placeholder="Tên Khoa" required>
+                <input type="text" name="facultyCode" placeholder="Mã Khoa" required>
+                <input type="submit" class="submit" value="Lưu Khoa" name="addFaculty">
             </form>
         </div>
 

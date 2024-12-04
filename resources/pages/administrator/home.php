@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="resources/images/logo/attnlg.png" rel="icon">
-    <title>Dashboard</title>
+    <title>Điều khiển</title>
     <link rel="stylesheet" href="resources/assets/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
 </head>
@@ -18,13 +18,13 @@
         <div class="main--content">
             <div class="overview">
                 <div class="title">
-                    <h2 class="section--title">Overview</h2>
+                    <h2 class="section--title">Chung</h2>
                     <select name="date" id="date" class="dropdown">
-                        <option value="today">Today</option>
-                        <option value="lastweek">Last Week</option>
-                        <option value="lastmonth">Last Month</option>
-                        <option value="lastyear">Last Year</option>
-                        <option value="alltime">All Time</option>
+                        <option value="today">Hôm nay</option>
+                        <option value="lastweek">Tuần trước</option>
+                        <option value="lastmonth">Tháng trước</option>
+                        <option value="lastyear">Năm ngoái</option>
+                        <option value="alltime">Toàn bộ</option>
                     </select>
                 </div>
                 <div class="cards">
@@ -32,7 +32,7 @@
 
                         <div class="card--data">
                             <div class="card--content">
-                                <h5 class="card--title">Registered Students</h5>
+                                <h5 class="card--title">Số học sinh đã đăng ký</h5>
                                 <h1><?php total_rows('tblstudents') ?></h1>
                             </div>
                             <i class="ri-user-2-line card--icon--lg"></i>
@@ -43,7 +43,7 @@
 
                         <div class="card--data">
                             <div class="card--content">
-                                <h5 class="card--title">Units</h5>
+                                <h5 class="card--title">Bài học</h5>
                                 <h1><?php total_rows("tblunit") ?></h1>
                             </div>
                             <i class="ri-file-text-line card--icon--lg"></i>
@@ -55,7 +55,7 @@
 
                         <div class="card--data">
                             <div class="card--content">
-                                <h5 class="card--title">Registered Lectures</h5>
+                                <h5 class="card--title">Bài giảng được đăng ký</h5>
                                 <h1><?php total_rows('tbllecture') ?></h1>
                             </div>
                             <i class="ri-user-line card--icon--lg"></i>
@@ -68,20 +68,20 @@
             <div class="table-container">
                 <a href="manage-lecture" style="text-decoration:none;">
                     <div class="title">
-                        <h2 class="section--title">Lectures</h2>
-                        <button class="add"><i class="ri-add-line"></i>Add lecture</button>
+                        <h2 class="section--title">Bài giảng</h2>
+                        <button class="add"><i class="ri-add-line"></i>Thêm bài giảng</button>
                     </div>
                 </a>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Email Address</th>
-                                <th>Phone No</th>
-                                <th>Faculty</th>
-                                <th>Date Registered</th>
-                                <th>Settings</th>
+                                <th>Tên</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Khoa</th>
+                                <th>Ngày đăng ký</th>
+                                <th>Cài đặt</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -116,20 +116,20 @@
             <div class="table-container">
                 <a href="manage-students" style="text-decoration:none;">
                     <div class="title">
-                        <h2 class="section--title">Students</h2>
-                        <button class="add"><i class="ri-add-line"></i>Add Student</button>
+                        <h2 class="section--title">Học sinh</h2>
+                        <button class="add"><i class="ri-add-line"></i>Thêm học sinh</button>
                     </div>
                 </a>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Registration No</th>
-                                <th>Name</th>
-                                <th>Faculty</th>
-                                <th>Course</th>
+                                <th>Số đăng ký</th>
+                                <th>Tên</th>
+                                <th>Khoa</th>
+                                <th>Khoá</th>
                                 <th>Email</th>
-                                <th>Settings</th>
+                                <th>Cài đặt</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -162,20 +162,20 @@
             <div class="table-container">
                 <a href="create-venue" style="text-decoration:none;">
                     <div class="title">
-                        <h2 class="section--title">Lecture Rooms</h2>
-                        <button class="add"><i class="ri-add-line"></i>Add room</button>
+                        <h2 class="section--title">Phòng học</h2>
+                        <button class="add"><i class="ri-add-line"></i>Thêm phòng học</button>
                     </div>
                 </a>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Class Name</th>
-                                <th>Faculty</th>
-                                <th>Current Status</th>
-                                <th>Capacity</th>
-                                <th>Classification</th>
-                                <th>Settings</th>
+                                <th>Tên lớp</th>
+                                <th>Khoa</th>
+                                <th>Tình trạng</th>
+                                <th>Sỉ số</th>
+                                <th>Loại phòng</th>
+                                <th>Cài đặt</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -206,20 +206,20 @@
             <div class="table-container">
                 <a href="manage-course" style="text-decoration:none;">
                     <div class="title">
-                        <h2 class="section--title">Courses</h2>
-                        <button class="add"><i class="ri-add-line"></i>Add Course</button>
+                        <h2 class="section--title">Khoá học</h2>
+                        <button class="add"><i class="ri-add-line"></i>Thêm khoá học</button>
                     </div>
                 </a>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Faculty</th>
-                                <th>Total Units</th>
-                                <th>Total Students</th>
-                                <th>Date Created</th>
-                                <th>Action</th>
+                                <th>Tên</th>
+                                <th>Khoa</th>
+                                <th>Tổng số bài</th>
+                                <th>Tổng số học sinh</th>
+                                <th>Ngày tạo</th>
+                                <th>Thực hiện</th>
                             </tr>
                         </thead>
                         <tbody>

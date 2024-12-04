@@ -37,7 +37,7 @@ if (!empty($unitCode)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="resources/images/logo/attnlg.png" rel="icon">
-    <title>lecture Dashboard</title>
+    <title>Bảng Môn Học</title>
     <link rel="stylesheet" href="resources/assets/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
 </head>
@@ -51,7 +51,7 @@ if (!empty($unitCode)) {
         <div class="main--content">
             <form class="lecture-options" id="selectForm">
                 <select required name="course" id="courseSelect" onChange="updateTable()">
-                    <option value="" selected>Select Course</option>
+                    <option value="" selected>Chọn khoá học</option>
                     <?php
                     $courseNames = getCourseNames();
                     foreach ($courseNames as $course) {
@@ -61,7 +61,7 @@ if (!empty($unitCode)) {
                 </select>
 
                 <select required name="unit" id="unitSelect" onChange="updateTable()">
-                    <option value="" selected>Select Unit</option>
+                    <option value="" selected>Chọn Bài</option>
                     <?php
                     $unitNames = getUnitNames();
                     foreach ($unitNames as $unit) {
@@ -74,15 +74,15 @@ if (!empty($unitCode)) {
 
             <div class="table-container">
                 <div class="title">
-                    <h2 class="section--title">Students List</h2>
+                    <h2 class="section--title">Danh Sách Học Sinh</h2>
                 </div>
                 <div class="table attendance-table" id="attendaceTable">
                     <table>
                         <thead>
                             <tr>
-                                <th>Registration No</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
+                                <th>Số đăng ký</th>
+                                <th>Tên</th>
+                                <th>Họ</th>
                                 <th>Email</th>
 
                             </tr>

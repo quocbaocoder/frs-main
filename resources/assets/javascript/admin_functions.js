@@ -25,7 +25,7 @@ function openCamera(buttonId) {
       }, 500);
     })
     .catch((error) => {
-      console.error("Error accessing webcam:", error);
+      console.error("Lỗi truy cập webcam:", error);
     });
 }
 const takeMultipleImages = async () => {
@@ -90,7 +90,7 @@ const captureImageWithDelay = async (i) => {
     );
     hiddenInput.value = capturedImage;
   } catch (err) {
-    console.error("Error accessing camera: ", err);
+    console.error("Lỗi truy cập webcam: ", err);
   }
 };
 

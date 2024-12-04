@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
           if (data.success) {
             document.getElementById(`row${dataName}${recordId}`).remove();
           } else {
-            alert("Failed to delete record.");
+            alert("Xoá dữ liệu thất bại.");
           }
         })
         .catch((error) => {
-          console.error("Error:", error);
+          console.error("Lỗi:", error);
         });
     });
   });

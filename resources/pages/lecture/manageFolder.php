@@ -21,7 +21,7 @@ if (isset($_POST['courseID']) && isset($_POST['unitID']) && isset($_POST['venueI
         $response['data'] = $registrationNumbers;
     } else {
         $response['status'] = 'error';
-        $response['message'] = 'No records found';
+        $response['message'] = 'Không tìm thấy dữ liệu ghi nhận.';
     }
 
     ob_start();
@@ -31,7 +31,7 @@ if (isset($_POST['courseID']) && isset($_POST['unitID']) && isset($_POST['venueI
     $response['html'] = $tableHTML;
 } else {
     $response['status'] = 'error';
-    $response['message'] = 'Invalid or missing parameters';
+    $response['message'] = 'Không hợp lệ.';
 }
 
 

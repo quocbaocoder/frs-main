@@ -17,16 +17,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     VALUES ('$studentID', '$course', '$unit', '$attendanceStatus', '$date')";
             
             if ($conn->query($sql) === TRUE) {
-                echo "Attendance data for student ID $studentID inserted successfully.<br>";
+                echo "Dữ liệu điểm danh học sinh $studentID đã thêm thành công.<br>";
             } else {
-                echo "Error inserting attendance data: " . $conn->error . "<br>";
+                echo "Lỗi thêm dữ liệu điểm danh: " . $conn->error . "<br>";
             }
         }
     } else {
-        echo "No attendance data received.<br>";
+        echo "Không có dữ liệu điểm danh.<br>";
     }
 } else {
-    echo "Invalid request method.<br>";
+    echo "Yêu cầu không hợp lệ.<br>";
 }
 
 ?>

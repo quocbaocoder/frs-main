@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page not found</title>
+    <title>không tìm thấy trang</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Gilda+Display);
 
@@ -217,7 +217,7 @@
 <body>
     <div class="error">404</div>
     <br /><br />
-    <span class="info">File not found</span>
+    <span class="info">Không tìm thấy tài nguyên</span>
     <img src="http://images2.layoutsparks.com/1/160030/too-much-tv-static.gif" class="static" />
 </body>
 

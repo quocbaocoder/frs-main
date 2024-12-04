@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="resources/images/logo/attnlg.png" rel="icon">
-    <title>lecture Dashboard</title>
+    <title>Bảng Môn Học</title>
     <link rel="stylesheet" href="resources/assets/css/styles.css">
     <script defer src="resources/assets/javascript/face_logics/face-api.min.js"></script>
 
@@ -61,10 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php include 'includes/sidebar.php'; ?>
         <div class="main--content">
             <div id="messageDiv" class="messageDiv" style="display:none;"> </div>
-            <p style="font:80px; font-weight:400; color:blue; text-align:center; padding-top:2px;">Please select course, unit, and venue first. Before Launching Facial Recognition</p>
+            <p style="font:80px; font-weight:400; color:blue; text-align:center; padding-top:2px;">Vui lòng chọn khóa học, bài học và địa điểm trước. Trước khi ra nhận dạng khuôn mặt</p>
             <form class="lecture-options" id="selectForm">
                 <select required name="course" id="courseSelect" onChange="updateTable()">
-                    <option value="" selected>Select Course</option>
+                    <option value="" selected>Chọn khoá học</option>
                     <?php
                     $courseNames = getCourseNames();
                     foreach ($courseNames as $course) {
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </select>
 
                 <select required name="unit" id="unitSelect" onChange="updateTable()">
-                    <option value="" selected>Select Unit</option>
+                    <option value="" selected>Chọn bài</option>
                     <?php
                     $unitNames = getUnitNames();
                     foreach ($unitNames as $unit) {
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </select>
 
                 <select required name="venue" id="venueSelect" onChange="updateTable()">
-                    <option value="" selected>Select Venue</option>
+                    <option value="" selected>Chọn địa điểm</option>
                     <?php
                     $venueNames = getVenueNames();
                     foreach ($venueNames as $venue) {
@@ -95,9 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             </form>
             <div class="attendance-button">
-                <button id="startButton" class="add">Launch Facial Recognition</button>
-                <button id="endButton" class="add" style="display:none">End Attendance Process</button>
-                <button id="endAttendance" class="add">END Attendance Taking</button>
+                <button id="startButton" class="add">Bắt đầu điểm danh</button>
+                <button id="endButton" class="add" style="display:none">Kết thúc quá trình điểm danh</button>
+                <button id="endAttendance" class="add">Kết thúc điểm danh</button>
             </div>
 
             <div class="video-container" style="display:none;">

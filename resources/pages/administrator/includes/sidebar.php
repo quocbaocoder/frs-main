@@ -3,31 +3,31 @@
                 <li>
                     <a href="home">
                         <span class="icon icon-1"><i class="ri-layout-grid-line"></i></span>
-                        <span class="sidebar--item">Dashboard</span>
+                        <span class="sidebar--item">Điều Khiển</span>
                     </a>
                 </li>
                 <li>
                     <a href="manage-course">
                         <span class="icon icon-1"><i class="ri-file-text-line"></i></span>
-                        <span class="sidebar--item">Manage Courses</span>
+                        <span class="sidebar--item">Quản Lý Khoá Học</span>
                     </a>
                 </li>
                 <li>
                     <a href="create-venue">
                         <span class="icon icon-1"><i class="ri-map-pin-line"></i></span>
-                        <span class="sidebar--item" style="white-space: nowrap;">Create Venue</span>
+                        <span class="sidebar--item" style="white-space: nowrap;">Tạo địa điểm</span>
                     </a>
                 </li>
                 <li>
                     <a href="manage-lecture">
                         <span class="icon icon-1"><i class="ri-user-line"></i></span>
-                        <span class="sidebar--item">manage lectures</span>
+                        <span class="sidebar--item">Quản Lý Bài Giảng</span>
                     </a>
                 </li>
                 <li>
                     <a href="manage-students">
                         <span class="icon icon-1"><i class="ri-user-line"></i></span>
-                        <span class="sidebar--item">Manage Students</span>
+                        <span class="sidebar--item">Quản Lý Học Sinh</span>
                     </a>
                 </li>
                 
@@ -36,13 +36,13 @@
                 <li>
                     <a href="#">
                         <span class="icon icon-2"><i class="ri-settings-3-line"></i></span>
-                        <span class="sidebar--item">Settings</span>
+                        <span class="sidebar--item">Cài Đặt</span>
                     </a>
                 </li>
                 <li>
                     <a href="logout">
                         <span class="icon icon-2"><i class="ri-logout-box-r-line"></i></span>
-                        <span class="sidebar--item">Logout</span>
+                        <span class="sidebar--item">Đăng Xuất</span>
                     </a>
                 </li>
             </ul>

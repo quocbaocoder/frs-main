@@ -16,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo json_encode(['success' => false, 'error' => $e->getMessage()]);
         }
     } else {
-        echo json_encode(['success' => false, 'error' => 'ID not provided.']);
+        echo json_encode(['success' => false, 'error' => 'ID không được cung cấp.']);
     }
 } else {
-    echo json_encode(['success' => false, 'error' => 'Invalid request method.']);
+    echo json_encode(['success' => false, 'error' => 'Yêu cầu không hợp lệ.']);
 }

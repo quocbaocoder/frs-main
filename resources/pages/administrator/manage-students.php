@@ -59,7 +59,7 @@ if (isset($_POST['addStudent'])) {
             ':dateRegistered' => $dateRegistered
         ]);
 
-        $_SESSION['message'] = "Student: $registrationNumber added successfully!";
+        $_SESSION['message'] = "Học sinh: $registrationNumber được thêm thành công!";
     }
 }
 
@@ -72,7 +72,7 @@ if (isset($_POST['addStudent'])) {
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="resources/images/logo/attnlg.png" rel="icon">
-    <title>AMS - Dashboard</title>
+    <title>QBS - Điều Khiển</title>
     <link rel="stylesheet" href="resources/assets/css/admin_styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
@@ -91,20 +91,20 @@ if (isset($_POST['addStudent'])) {
             <div class="table-container">
 
                 <div class="title" id="showButton">
-                    <h2 class="section--title">Students</h2>
-                    <button class="add"><i class="ri-add-line"></i>Add Student</button>
+                    <h2 class="section--title">Học Sinh</h2>
+                    <button class="add"><i class="ri-add-line"></i>Thêm học sinh</button>
                 </div>
 
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Registration No</th>
-                                <th>Name</th>
-                                <th>Faculty</th>
-                                <th>Course</th>
+                                <th>Số đăng ký</th>
+                                <th>Tên</th>
+                                <th>Khoa</th>
+                                <th>Khoá học</th>
                                 <th>Email</th>
-                                <th>Settings</th>
+                                <th>Cài đặt</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -138,7 +138,7 @@ if (isset($_POST['addStudent'])) {
                 <form method="post">
                     <div style="display:flex; justify-content:space-around;">
                         <div class="form-title">
-                            <p>Add Student</p>
+                            <p>Thêm học sinh</p>
                         </div>
                         <div>
                             <span class="close">&times;</span>
@@ -146,13 +146,13 @@ if (isset($_POST['addStudent'])) {
                     </div>
                     <div>
                         <div>
-                            <input type="text" name="firstName" placeholder="First Name">
-                            <input type="text" name="lastName" " placeholder=" Last Name">
-                            <input type="email" name="email" placeholder="Email Address">
-                            <input type="text" required id="registrationNumber" name="registrationNumber" placeholder="Registration Number"> <br>
-                            <p id="error" style="color: red; display: none;">Invalid characters in registration number.</p> 
+                            <input type="text" name="firstName" placeholder="Tên">
+                            <input type="text" name="lastName" " placeholder=" Họ">
+                            <input type="email" name="email" placeholder="Email">
+                            <input type="text" required id="registrationNumber" name="registrationNumber" placeholder="Số đăng ký"> <br>
+                            <p id="error" style="color: red; display: none;">Ký tự không hợp lệ trong số đăng ký.</p> 
                             <select required name="faculty">
-                                <option value="" selected>Select Faculty</option>
+                                <option value="" selected>Chọn khoa</option>
                                 <?php
                                 $facultyNames = getFacultyNames();
                                 foreach ($facultyNames as $faculty) {
@@ -162,7 +162,7 @@ if (isset($_POST['addStudent'])) {
                             </select> <br />
 
                             <select required name="course">
-                                <option value="" selected>Select Course</option>
+                                <option value="" selected>Chọn khoá học</option>
                                 <?php
                                 $courseNames = getCourseNames();
                                 foreach ($courseNames as $course) {
@@ -173,7 +173,7 @@ if (isset($_POST['addStudent'])) {
                         </div>
                         <div>
                             <div class="form-title-image">
-                                <p>Take Student Pictures
+                                <p>Lấy hình học sinh
                                 <p>
                             </div>
                             <div id="open_camera" class="image-box" onclick="takeMultipleImages()">
@@ -189,7 +189,7 @@ if (isset($_POST['addStudent'])) {
                         </div>
                     </div>
 
-                    <input type="submit" class="btn-submit" value="Save Student" name="addStudent" />
+                    <input type="submit" class="btn-submit" value="Lưu thông tin HS" name="addStudent" />
 
 
                 </form>

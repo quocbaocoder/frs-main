@@ -1,11 +1,11 @@
 <section class="header">
     <div class="logo">
         <i class="ri-menu-line icon icon-0 menu"></i>
-        <h2>Attendance M<span>s</span></h2>
+        <h2>Attendance QB<span>s</span></h2>
     </div>
     <div class="search--notification--profile">
         <div id="searchInput" class="search">
-            <input type="text" id="searchText" placeholder="Search .....">
+            <input type="text" id="searchText" placeholder="Tìm kiếm .....">
             <button onclick="searchItems()"><i class="ri-search-2-line"></i></button>
         </div>
         <div class="notification--profile">

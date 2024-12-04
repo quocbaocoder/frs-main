@@ -28,14 +28,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             $response['status'] = 'success';
-            $response['message'] = "Attendance recorded successfully for all entries.";
+            $response['message'] = "Điểm danh đã được ghi nhận thành công cho tất cả các mục nhập.";
         } catch (PDOException $e) {
             $response['status'] = 'error';
-            $response['message'] = "Error inserting attendance data: " . $e->getMessage();
+            $response['message'] = "Lỗi thêm dữ liệu điểm danh: " . $e->getMessage();
         }
     } else {
         $response['status'] = 'error';
-        $response['message'] = "No attendance data received.";
+        $response['message'] = "Không nhận được dữ liệu điểm danh.";
     }
 
     echo json_encode($response);

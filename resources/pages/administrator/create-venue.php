@@ -11,7 +11,7 @@ if (isset($_POST["addVenue"])) {
 
     // Check for required fields
     if (!$className || !$facultyCode || !$currentStatus || !$capacity || !$classification) {
-        $_SESSION['message'] = "All fields are required and must be valid.";
+        $_SESSION['message'] = "Tất cả thông tin đều bắt buộc.";
     } else {
         $dateRegistered = date("Y-m-d");
 
@@ -23,7 +23,7 @@ if (isset($_POST["addVenue"])) {
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
-                $_SESSION['message'] = "Venue Already Exists";
+                $_SESSION['message'] = "Địa điểm đã tồn tại";
             } else {
                 // Insert the new venue
                 $stmt = $pdo->prepare(
@@ -38,13 +38,13 @@ if (isset($_POST["addVenue"])) {
                 $stmt->bindParam(':dateCreated', $dateRegistered);
 
                 if ($stmt->execute()) {
-                    $_SESSION['message'] = "Venue Inserted Successfully";
+                    $_SESSION['message'] = "Đã thêm địa điểm thành công";
                 } else {
-                    $_SESSION['message'] = "Failed to Insert Venue.";
+                    $_SESSION['message'] = "Thêm địa điểm thất bại.";
                 }
             }
         } catch (PDOException $e) {
-            $_SESSION['message'] = "Database Error: " . $e->getMessage();
+            $_SESSION['message'] = "Cơ sở dữ liệu lỗi: " . $e->getMessage();
         }
     }
 }
@@ -59,7 +59,7 @@ if (isset($_POST["addVenue"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="resources/images/logo/attnlg.png" rel="icon">
-    <title>Dashboard</title>
+    <title>Điều Khiển</title>
     <link rel="stylesheet" href="resources/assets/css/admin_styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
 </head>
@@ -74,14 +74,14 @@ if (isset($_POST["addVenue"])) {
 
             <div class="rooms">
                 <div class="title">
-                    <h2 class="section--title">Rooms</h2>
+                    <h2 class="section--title">Phòng học</h2>
                     <div class="rooms--right--btns">
                         <select name="date" id="date" class="dropdown room--filter">
                             <option>Filter</option>
-                            <option value="free">Free</option>
-                            <option value="scheduled">Scheduled</option>
+                            <option value="free">Trống</option>
+                            <option value="scheduled">Đã có lịch</option>
                         </select>
-                        <button id="addClass1" class="add show-form"><i class="ri-add-line"></i>Add lecture room</button>
+                        <button id="addClass1" class="add show-form"><i class="ri-add-line"></i>Thêm phòng học</button>
                     </div>
                 </div>
                 <div class="rooms--cards">
@@ -91,7 +91,7 @@ if (isset($_POST["addVenue"])) {
                                 <img src="resources/images/office image.jpeg" alt="">
                             </div>
                         </div>
-                        <p class="free">Office</p>
+                        <p class="free">Văn Phòng</p>
                     </a>
                     <a href="#" class="room--card">
                         <div class="img--box--cover">
@@ -99,7 +99,7 @@ if (isset($_POST["addVenue"])) {
                                 <img src="resources/images/class.jpeg" alt="">
                             </div>
                         </div>
-                        <p class="free">Class</p>
+                        <p class="free">Lớp</p>
                     </a>
 
                     <a href="#" class="room--card">
@@ -108,7 +108,7 @@ if (isset($_POST["addVenue"])) {
                                 <img src="resources/images/lecture hall.jpeg" alt="">
                             </div>
                         </div>
-                        <p class="free">Lecture Hall</p>
+                        <p class="free">Sảnh chờ</p>
                     </a>
 
                     <a href="#" class="room--card">
@@ -117,7 +117,7 @@ if (isset($_POST["addVenue"])) {
                                 <img src="resources/images/computer lab.jpeg" alt="">
                             </div>
                         </div>
-                        <p class="free">Computer Lab</p>
+                        <p class="free">Phòng máy tính</p>
                     </a>
                     <a href="#" class="room--card">
                         <div class="img--box--cover">
@@ -125,14 +125,14 @@ if (isset($_POST["addVenue"])) {
                                 <img src="resources/images/laboratory.jpeg" alt="">
                             </div>
                         </div>
-                        <p class="free">Science Lab</p>
+                        <p class="free">Phòng thí nghiệm</p>
                     </a>
                 </div>
             </div>
             <?php showMessage() ?>
             <div class="table-container">
                 <div class="title" id="addClass2">
-                    <h2 class="section--title">Lecture Rooms</h2>
+                    <h2 class="section--title">Phòng dạy</h2>
                     <button class="add show-form"><i class="ri-add-line"></i>Add Class</button>
                 </div>
 
@@ -140,12 +140,12 @@ if (isset($_POST["addVenue"])) {
                     <table>
                         <thead>
                             <tr>
-                                <th>Class Name</th>
-                                <th>Faculty</th>
-                                <th>Current Status</th>
-                                <th>Capacity</th>
-                                <th>Classification</th>
-                                <th>Settings</th>
+                                <th>Tên lớp</th>
+                                <th>Lớp</th>
+                                <th>Tình trạng</th>
+                                <th>Sỉ số</th>
+                                <th>Loại phòng</th>
+                                <th>Cài đặt</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -178,29 +178,29 @@ if (isset($_POST["addVenue"])) {
                 <form method="POST" action="" name="addVenue" enctype="multipart/form-data">
                     <div style="display:flex; justify-content:space-around;">
                         <div class="form-title">
-                            <p>Add Venue</p>
+                            <p>Thêm lớp</p>
                         </div>
                         <div>
                             <span class="close">&times;</span>
                         </div>
                     </div>
-                    <input type="text" name="className" placeholder="Class Name" required>
+                    <input type="text" name="className" placeholder="Tên Lớp" required>
                     <select name="currentStatus" id="">
-                        <option value="">--Current Status--</option>
-                        <option value="availlable">Available</option>
-                        <option value="scheduled">Scheduled</option>
+                        <option value="">--Tình trạng--</option>
+                        <option value="có sẵn">Có sẵn</option>
+                        <option value="đã có lịch">Đã có lịch</option>
                     </select>
-                    <input type="text" name="capacity" placeholder="Capacity" required>
+                    <input type="text" name="capacity" placeholder="Sỉ số" required>
                     <select required name="classification">
-                        <option value="" selected> --Select Class Type--</option>
-                        <option value="laboratory">Laboratory</option>
-                        <option value="computerLab">Computer Lab</option>
-                        <option value="lectureHall">Lecture Hall</option>
-                        <option value="class">Class</option>
-                        <option value="office">Office</option>
+                        <option value="" selected> --Chọn loại lớp học--</option>
+                        <option value="P. Thí Nghiệm">Thí nghiệm</option>
+                        <option value="P. Máy Tính">Phòng máy tính</option>
+                        <option value="Sảnh Chờ">Sảnh chờ</option>
+                        <option value="Lớp Học">Lớp</option>
+                        <option value="Văn Phòng">Văn phòng</option>
                     </select>
                     <select required name="faculty">
-                        <option value="" selected>Select Faculty</option>
+                        <option value="" selected>Chọn khoa</option>
                         <?php
                         $facultyNames = getFacultyNames();
                         foreach ($facultyNames as $faculty) {
@@ -208,7 +208,7 @@ if (isset($_POST["addVenue"])) {
                         }
                         ?>
                     </select>
-                    <input type="submit" class="submit" value="Save Venue" name="addVenue">
+                    <input type="submit" class="submit" value="Lưu địa điểm" name="addVenue">
                 </form>
             </div>
         </div>

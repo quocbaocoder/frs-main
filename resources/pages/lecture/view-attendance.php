@@ -37,7 +37,7 @@ if (!empty($unitCode)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="resources/images/logo/attnlg.png" rel="icon">
-    <title>lecture Dashboard</title>
+    <title>Bảng Môn Học</title>
     <link rel="stylesheet" href="resources/assets/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
 </head>
@@ -51,7 +51,7 @@ if (!empty($unitCode)) {
         <div class="main--content">
             <form class="lecture-options" id="selectForm">
                 <select required name="course" id="courseSelect" onChange="updateTable()">
-                    <option value="" selected>Select Course</option>
+                    <option value="" selected>Chọn khoá học</option>
                     <?php
                     $courseNames = getCourseNames();
                     foreach ($courseNames as $course) {
@@ -61,7 +61,7 @@ if (!empty($unitCode)) {
                 </select>
 
                 <select required name="unit" id="unitSelect" onChange="updateTable()">
-                    <option value="" selected>Select Unit</option>
+                    <option value="" selected>Chọn bài</option>
                     <?php
                     $unitNames = getUnitNames();
                     foreach ($unitNames as $unit) {
@@ -71,17 +71,17 @@ if (!empty($unitCode)) {
                 </select>
             </form>
 
-            <button class="add" onclick="exportTableToExcel('attendaceTable', '<?php echo $unitCode ?>_on_<?php echo date('Y-m-d'); ?>','<?php echo $coursename ?>', '<?php echo $unitname ?>')">Export Attendance As Excel</button>
+            <button class="add" onclick="exportTableToExcel('attendaceTable', '<?php echo $unitCode ?>_on_<?php echo date('Y-m-d'); ?>','<?php echo $coursename ?>', '<?php echo $unitname ?>')">Xuất DS Điểm Danh Dưới Dạng Excel</button>
 
             <div class="table-container">
                 <div class="title">
-                    <h2 class="section--title">Attendance Preview</h2>
+                    <h2 class="section--title">Xem điểm danh</h2>
                 </div>
                 <div class="table attendance-table" id="attendaceTable">
                     <table>
                         <thead>
                             <tr>
-                                <th>Registration No</th>
+                                <th>Số đăng ký</th>
                                 <?php
                                 // Fetch distinct dates for the selected course and unit
                                 $distinctDatesQuery = "SELECT DISTINCT dateMarked FROM tblattendance WHERE course = :courseCode AND unit = :unitCode";
@@ -183,7 +183,7 @@ if (!empty($unitCode)) {
         var currentDate = new Date();
         var formattedDate = currentDate.toLocaleDateString(); // Format the date as needed
 
-        var headerContent = '<p style="font-weight:700;"> Attendance for : ' + courseCode + ' Unit name : ' + unitCode + ' On: ' + formattedDate + '</p>';
+        var headerContent = '<p style="font-weight:700;"> Điểm danh cho : ' + courseCode + ' Tên bài : ' + unitCode + ' Vào lúc: ' + formattedDate + '</p>';
         var tbody = document.createElement('tbody');
         var additionalRow = tbody.insertRow(0);
         var additionalCell = additionalRow.insertCell(0);

@@ -13,11 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     $userType = $_POST['user_type'];
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'Invalid email format';
+        $errors['email'] = 'Định dạng email không hợp lệ';
     }
 
     if (empty($password)) {
-        $errors['password'] = 'Password cannot be empty';
+        $errors['password'] = 'Mật khẩu không được để trống';
     }
 
     if (!empty($errors)) {
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
         header('Location: home');
         exit();
     } else {
-        $errors['login'] = 'Invalid email or password';
+        $errors['login'] = 'Email hoặc mật khẩu không đúng';
         $_SESSION['errors'] = $errors;
     }
 }
@@ -73,7 +73,7 @@ function display_error($error, $is_main = false)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login to access dashboard </title>
+    <title> Đăng nhập để truy cập bảng điều khiển </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="resources/assets/css/login_styles.css">
 </head>
@@ -81,7 +81,7 @@ function display_error($error, $is_main = false)
 <body>
 
     <div class="container" id="signIn">
-        <h1 class="form-title">Sign In</h1>
+        <h1 class="form-title">Đăng Nhập</h1>
         <?php
         display_error('login', true);
         ?>
@@ -90,8 +90,8 @@ function display_error($error, $is_main = false)
                 <i class="fas fa-times"></i>
 
                 <select name="user_type" id="" required>
-                    <option value="">Select User</option>
-                    <option value="lecture">Lecture</option>
+                    <option value="">Chọn người dùng</option>
+                    <option value="lecture">Giáo viên</option>
                     <option value="administrator">Admin</option>
                 </select>
             </div>
@@ -104,19 +104,19 @@ function display_error($error, $is_main = false)
             </div>
             <div class="input-group password">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="password" name="password" id="password" placeholder="Mật khẩu" required>
                 <i id="eye" class="fa fa-eye"></i>
                 <?php
                 display_error('password')
                 ?>
             </div>
             <p class="recover">
-                <a href="#">Recover Password</a>
+                <a href="#">Quên Mật Khẩu</a>
             </p>
-            <input type="submit" class="btn" value="Sign In" name="login">
+            <input type="submit" class="btn" value="Đăng nhập" name="login">
         </form>
         <p class="or">
-            ----------or--------
+            ---------Hoặc--------
         </p>
         <div class="icons">
             <i class="fab fa-google"></i>

@@ -40,7 +40,7 @@ function markAttendance(detectedFaces) {
   document.querySelectorAll("#studentTableContainer tr").forEach((row) => {
     const registrationNumber = row.cells[0].innerText.trim();
     if (detectedFaces.includes(registrationNumber)) {
-      row.cells[5].innerText = "present";
+      row.cells[5].innerText = "có mặt";
     }
   });
 }
@@ -59,10 +59,10 @@ function updateOtherElements() {
   ])
     .then(() => {
       modelsLoaded = true;
-      console.log("models loaded successfully");
+      console.log("tải mẫu thành công");
     })
     .catch(() => {
-      alert("models not loaded, please check your model folder location");
+      alert("không tải được model, vui lòng kiểm tra");
     });
   startButton.addEventListener("click", async () => {
     videoContainer.style.display = "flex";
@@ -105,10 +105,10 @@ function updateOtherElements() {
           if (detections) {
             descriptions.push(detections.descriptor);
           } else {
-            console.log(`No face detected in ${label}/${i}.png`);
+            console.log(`Không phát hiện ${label}/${i}.png`);
           }
         } catch (error) {
-          console.error(`Error processing ${label}/${i}.png:`, error);
+          console.error(`Lỗi xử lý ${label}/${i}.png:`, error);
         }
       }
 

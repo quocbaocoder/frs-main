@@ -57,7 +57,7 @@ if (isset($_POST["addLecture"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="resources/images/logo/attnlg.png" rel="icon">
 
-    <title>AMS - Dashboard</title>
+    <title>QBS - Điều Khiển</title>
     <link rel="stylesheet" href="resources/assets/css/admin_styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" rel="stylesheet">
@@ -76,19 +76,19 @@ if (isset($_POST["addLecture"])) {
             <?php showMessage() ?>
             <div class="table-container">
                 <div class="title" id="showButton">
-                    <h2 class="section--title">Lectures</h2>
-                    <button class="add"><i class="ri-add-line"></i>Add lecture</button>
+                    <h2 class="section--title">Bài Giảng</h2>
+                    <button class="add"><i class="ri-add-line"></i>Thêm bài giảng</button>
                 </div>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Email Address</th>
-                                <th>Phone No</th>
-                                <th>Faculty</th>
-                                <th>Date Registered</th>
-                                <th>Settings</th>
+                                <th>Tên</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Khoa</th>
+                                <th>Ngày tạo</th>
+                                <th>Cài đặt</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -121,20 +121,20 @@ if (isset($_POST["addLecture"])) {
                 <form method="POST" action="" name="addLecture" enctype="multipart/form-data">
                     <div style="display:flex; justify-content:space-around;">
                         <div class="form-title">
-                            <p>Add Lecture</p>
+                            <p>Tên bài giảng</p>
                         </div>
                         <div>
                             <span class="close">&times;</span>
                         </div>
                     </div>
-                    <input type="text" name="firstName" placeholder="First Name" required>
-                    <input type="text" name="lastName" placeholder="Last Name" required>
-                    <input type="email" name="email" placeholder="Email Address" required>
-                    <input type="text" name="phoneNumber" placeholder="Phone Number" required>
+                    <input type="text" name="firstName" placeholder="Tên" required>
+                    <input type="text" name="lastName" placeholder="Họ" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="phoneNumber" placeholder="Số Điện Thoại" required>
                     <input type="password" name="password" placeholder="**********" required>
 
                     <select required name="faculty">
-                        <option value="" selected>Select Faculty</option>
+                        <option value="" selected>Chọn khoa</option>
                         <?php
                         $facultyNames = getFacultyNames();
                         foreach ($facultyNames as $faculty) {
@@ -142,7 +142,7 @@ if (isset($_POST["addLecture"])) {
                         }
                         ?>
                     </select>
-                    <input type="submit" class="submit" value="Save Lecture" name="addLecture">
+                    <input type="submit" class="submit" value="Lưu bài giảng" name="addLecture">
                 </form>
             </div>
 
